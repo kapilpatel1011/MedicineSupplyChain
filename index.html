@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Medicine Supply Chain Tracker</title>
+</head>
+<body>
+    <header>
+        <h1>Medicine Supply Chain Tracker</h1>
+    </header>
+
+    <div class="container">
+        <h2>Create Medicine</h2>
+        <input id="medicineName" type="text" placeholder="Enter Medicine Name">
+        <input id="batchNumber" type="text" placeholder="Enter Batch Number">
+        <input id="manufacturer" type="text" placeholder="Enter Manufacturer">
+        <button onclick="createMedicine()">Create Medicine</button>
+    </div>
+
+    <div class="container">
+        <h2>Transfer Medicine</h2>
+        <input id="transferBatch" type="text" placeholder="Enter Batch Number">
+        <input id="newHolder" type="text" placeholder="Enter New Holder">
+        <input id="transferDate" type="text" placeholder="Enter Transfer Date">
+        <button onclick="transferMedicine()">Transfer Medicine</button>
+    </div>
+
+    <div class="container">
+        <h2>Confirm Delivery</h2>
+        <input id="deliveryBatch" type="text" placeholder="Enter Batch Number">
+        <input id="deliveryAddress" type="text" placeholder="Enter Delivery Address">
+        <input id="deliveryDate" type="text" placeholder="Enter Delivery Date">
+        <button onclick="confirmDelivery()">Confirm Delivery</button>
+        <input id="queryBatchNumber" type="text" placeholder="Enter Batch Number to Query">
+        <button id="getDetailsButton" onclick="showDetails()">Get Medicine</button>
+    </div>
+
+    <div class="container" id="medicineDetails">
+        <h2>Medicine Details</h2>
+        <p id="detailsOutput">Details will be displayed here...</p>
+    </div>
+
+    <!-- Status Display -->
+    <div id="statusOutput" class="container">
+        <h2>Current Action Status</h2>
+        <p id="statusMessage">No actions taken yet.</p>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <h2 id="popupTitle"></h2>
+            <p id="popupMessage"></p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
