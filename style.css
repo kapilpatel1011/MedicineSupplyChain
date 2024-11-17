@@ -1,0 +1,196 @@
+/* General reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    font-size: 16px; /* Base font size for better scaling */
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #007bff;
+    font-size: 2rem; /* Use rem for better scaling */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Container styling */
+.container {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease; /* Smooth transition for container resizing */
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem; /* Use rem for better scaling */
+    text-align: center;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* Input styling */
+.container input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem; /* Use rem for better scaling */
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Transition for box-shadow */
+}
+
+.container input[type="text"]:focus {
+    border: 1px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Button styling */
+.container button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem; /* Use rem for better scaling */
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.container button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Smooth shadow transition on hover */
+}
+
+/* Details container */
+#medicineDetails p {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    font-size: 1rem; /* Use rem for better scaling */
+    color: #101010;
+    line-height: 1.5;
+    text-align: left;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden; /* Hides any overflow text */
+    text-overflow: ellipsis; /* Adds '...' at the end if the text overflows */
+}
+
+/* Status display */
+#statusOutput p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Popup styling */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+}
+
+.popup.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    transition: transform 0.3s ease; /* Smooth popup transition */
+}
+
+.popup-content h2 {
+    margin-bottom: 15px;
+    font-size: 1.25rem; /* Use rem for better scaling */
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+    font-size: 1rem; /* Use rem for better scaling */
+    color: #333;
+}
+
+.popup-content button {
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem; /* Use rem for better scaling */
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+    background: #0056b3;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .container h2 {
+        font-size: 1.2rem;
+    }
+
+    .container input[type="text"],
+    .container button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .popup-content {
+        width: 90%;
+    }
+}
